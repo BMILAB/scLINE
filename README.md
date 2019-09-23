@@ -1,7 +1,7 @@
 # scLINE
 ## 1	Overview
 scLINE is an R package for dimension reduction of single-cell RNA-seq data. scLINE integrates the single-cell RNA-seq data and multiple gene networks collated from public databases, supplementing inter-gene interactions to solve the problem of missing information caused by drop-out events.
-![](https://github.com/BMILAB/scLINE/figure/fig1.jpg)
+![](https://github.com/BMILAB/scLINE/raw/master/figure/fig1.jpg)
 ## 2	Installation
 You can install scLINE from github with:
 ```R
@@ -60,7 +60,7 @@ Visualize the obtained low dimensional matrix in 2D through the function visuali
 ```R
 > visualize(lowdim_list$cell_low,Usoskin$label)
 ```
-![](https://github.com/BMILAB/scLINE/figure/visualization.jpg)
+![](https://github.com/BMILAB/scLINE/raw/master/figure/visualization.jpg)
 ## 5	Session information
 ```R
 > sessionInfo()
