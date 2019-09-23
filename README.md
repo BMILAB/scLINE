@@ -2,6 +2,7 @@
 ## 1	Overview
 scLINE is an R package for dimension reduction of single-cell RNA-seq data. scLINE integrates the single-cell RNA-seq data and multiple gene networks collated from public databases, supplementing inter-gene interactions to solve the problem of missing information caused by drop-out events.
 ![](https://github.com/BMILAB/scLINE/raw/master/figure/fig1.jpg)
+            **Figure 1.** Overview of scLINE. (A) Construction of cell-gene networks based on scRNA-seq data. (B) Integrate and build gene networks based on multiple genetic interactions databases. (C) In each iteration, the edges in the cell-gene network are selected, and the corresponding low-dimensional vectors of cell and gene are updated based on the expression information and the integrated gene relationships. Train the model to get the low-dimensional representation of cells and genes.
 ## 2	Installation
 You can install scLINE from github with:
 ```R
@@ -49,18 +50,20 @@ List of 3
   ..$ V3: num [1:476399] 4.26 4.25 4.24 4.24 4.24 ...
 ```
 ## 4	Standard analysis work-flow
-Users can obtain the low-dimensional representation matrix of single cells through the function scLINE. The user need to specifie the low-dimensional vector dimension L, the number of iterations T, the number of negative samples K, the initial learning rate rho, and the choice of whether to set the random weight Random_weight.
+Users can obtain the low-dimensional representation matrix of single cells through the function *scLINE*. The user need to specify the low-dimensional vector dimension *L*, the number of iterations *T*, the number of negative samples *K*, the initial learning rate *rho*, and the choice of whether to set the random weight *Random_weight*.
 ```R
 > lowdim_list<-scLINE(exp_mat, gene_network, L = 100, K = 5, T = 3e7, rho = 0.025, Random_weight = TRUE)
 Mathching geneID...
 Constructing mapping tables for sampling...
 Start iterating...
 ```
-Visualize the obtained low dimensional matrix in 2D through the function visualize.
+Visualize the obtained low dimensional matrix in 2D through the function *visualize*.
 ```R
 > visualize(lowdim_list$cell_low,Usoskin$label)
 ```
 ![](https://github.com/BMILAB/scLINE/raw/master/figure/visualization.jpg)
+
+**Figure 2.** Visualization of Usoskin after scLINE
 ## 5	Session information
 ```R
 > sessionInfo()
